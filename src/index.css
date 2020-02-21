@@ -70,3 +70,27 @@ body, html, .App, #root, .auth-wrapper {
 .forgot-password a {
   color: #167bff;
 }
+.main-login{
+  justify-content: center;
+  border: 1px solid #7f7d7d;
+  background: white;
+
+}
+.background-main{
+  background: linear-gradient(to right ,purple,blue);
+}
+.background-main2{
+  background: linear-gradient(to right ,red,orange);
+}
+.btn-block{
+  background: linear-gradient(to right ,blue,purple);
+}
+.btn-bg{
+  background: linear-gradient(to right ,orange,red);
+  border: none !important;
+}
+input.is-invalid {
+  background-position: center left calc(.5em) !important;
+  padding: 10px !important;
+  border-color: red;
+}
