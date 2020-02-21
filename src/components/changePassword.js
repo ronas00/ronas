@@ -20,9 +20,9 @@ export default class changePassword extends Component {
         this.setState({ field });
     }
     serndRequest = async () => {
-        return await Axios.post("http://176.9.164.199:3004/auth/update_password", {
-            "old_password": this.state.field.password,
-            "new_password": this.state.field.newpassword
+        return await Axios.put("http://176.9.164.199:3004/auth/update_password", {
+            "old_password": this.state.field.old_password,
+            "new_password": this.state.field.new_password
         })
     }
     makeRequest(e) {
@@ -32,6 +32,7 @@ export default class changePassword extends Component {
         this.serndRequest()
             .then(res => {
                 console.log(res)
+                toast.success("passwors successfully changed")
             })
             
         }

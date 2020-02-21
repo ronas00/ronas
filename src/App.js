@@ -3,6 +3,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import 'react-toastify/dist/ReactToastify.css';
+import {ToastContainer} from "react-toastify";
 
 import Login from "./components/login";
 import SignUp from "./components/signup";
@@ -17,6 +18,7 @@ function App() {
         <Route path="/signup" component={SignUp} />
         <Route path="/changePassword" component={changePassword} />
       </Switch>
+      <ToastContainer rtl className="rtl toast-style"/>
     </Router >
   );
 }
