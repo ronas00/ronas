@@ -19,17 +19,17 @@ export default class SignUp extends Component {
         this.setState({ field });
     }
     serndRequest = async () => {
-       return await Axios.post("http://176.9.164.199:3004/auth/signup", {
+        return await Axios.post("http://176.9.164.199:3004/auth/signup", {
             "username": this.state.field.username,
             "password": this.state.field.password
         })
     }
     makeRequest(e) {
         e.preventDefault()
-            this.serndRequest()
-                .then(res=>{
-                    console.log(res)
-                })
+        this.serndRequest()
+            .then(res => {
+                console.log(res)
+            })
 
     }
     chekValiadtion() {
@@ -64,7 +64,7 @@ export default class SignUp extends Component {
                             onChange={this.handleChange.bind(this)} className="form-control mb-2" placeholder="password" />
                         {/* <input type="confirmpassword" name="password"
                             onChange={this.handleChange.bind(this)} className="form-control mb-2" placeholder="Confirmpassword" /> */}
-                        <button onClick={(e)=>this.makeRequest(e)} type="text" className="btn btn-primary btn-block btn-bg btn-sm ">Submit</button>
+                        <button onClick={(e) => this.makeRequest(e)} type="text" className="btn btn-primary btn-block btn-bg btn-sm ">Submit</button>
                         <p className="forgot-password text-left">
                             <a href="#"> Forget password?</a>
                         </p>

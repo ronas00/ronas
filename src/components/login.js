@@ -23,6 +23,9 @@ export default class Login extends Component {
     makeRequest(e) {
         e.preventDefault()
         this.sendRequest()
+        .then(res=>{
+            localStorage.setItem("login_user",JSON.stringify(res.data))
+        })
     }
     handleChange(event) {
         let field = this.state.field;
