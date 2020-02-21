@@ -52,6 +52,8 @@ export default class SignUp extends Component {
     render() {
         let { errors } = this.state
         return (
+
+
             <form className="background-main2 d-flex w-100 h-100 align-items-center">
                 <div className="container-fluid main-login p-5" style={{ height: "300px", width: "300px" }}>
                     <p>SIGNUP</p>
@@ -68,6 +70,7 @@ export default class SignUp extends Component {
                         </p>
                     </div>
                 </div>
+
             </form>
         );
     }
