@@ -14,19 +14,15 @@ export default class Login extends Component {
 
 
 
-    serndRequest = async () => {
-        Axios.post("http://176.9.164.199:3004/auth/login", {
+    sendRequest = async () => {
+        return await Axios.post("http://176.9.164.199:3004/auth/login", {
             "username": this.state.field.username,
             "password": this.state.field.password
         })
     }
-    makeRequest() {
-        if (this.state.errors.length == 0) {
-            this.serndRequest()
-                .then(res=>{
-                })
-        }
-
+    makeRequest(e) {
+        e.preventDefault()
+        this.sendRequest()
     }
     handleChange(event) {
         let field = this.state.field;
@@ -35,7 +31,6 @@ export default class Login extends Component {
         this.setState({ field });
     }
     chekValiadtion() {
-        console.log("heloo")
         const { username, password, confirmpassword } = this.state.field
         let errors = {}
         if (username.length == 0) {
@@ -53,17 +48,17 @@ export default class Login extends Component {
         this.setState({ errors, loading: true })
     }
     render() {
-        let {errors}=this.state
+        let { errors } = this.state
         return (
             <form className="background-main d-flex w-100 h-100 align-items-center">
                 <div className="container-fluid main-login p-5" style={{ height: "300px", width: "300px" }}>
-                            <p>LOGIN</p>
+                    <p>LOGIN</p>
                     <div className="form-group">
                         <input type="text" name="username" className="form-control mb-2"
-                        onChange={this.handleChange.bind(this)} placeholder="username" />
-                        <input type="password" name="password" 
-                        onChange={this.handleChange.bind(this)} className="form-control mb-2" placeholder="password" />
-                        <button type="text" className="btn btn-primary btn-block btn-sm ">Submit</button>
+                            onChange={this.handleChange.bind(this)} placeholder="username" />
+                        <input type="password" name="password"
+                            onChange={this.handleChange.bind(this)} className="form-control mb-2" placeholder="password" />
+                        <button onClick={(e) => this.makeRequest(e)} type="text" className="btn btn-primary btn-block btn-sm ">Submit</button>
                         <p className="forgot-password text-left">
                             <a href="#"> Forget password?</a>
                         </p>
